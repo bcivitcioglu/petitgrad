@@ -1,0 +1,14 @@
+LICENCE
+README.md
+setup.py
+petitgrad/__init__.py
+petitgrad/engine.py
+petitgrad/nn.py
+petitgrad.egg-info/PKG-INFO
+petitgrad.egg-info/SOURCES.txt
+petitgrad.egg-info/dependency_links.txt
+petitgrad.egg-info/requires.txt
+petitgrad.egg-info/top_level.txt
+tests/__init__.py
+tests/test_engine.py
+tests/test_nn.py
