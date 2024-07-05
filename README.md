@@ -2,7 +2,7 @@
 
 ![status](https://img.shields.io/badge/is_it_ready-it_works-green)
 ![License](https://img.shields.io/badge/Licence-MIT-blue)
-
+![Warning](https://img.shields.io/badge/Error-Detected_in_Broadcasting_VAE-red)
 <p align="center">
   <img src="imgs/petitgrad_dog.png" alt="petitgrad Logo" width="400"/>
 </p>
