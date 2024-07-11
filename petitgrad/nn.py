@@ -1,4 +1,4 @@
-from petitgrad.engine import Tensor
+from petitgrad.engine import Matrix
 import numpy as np
 
 class Layer:
@@ -10,21 +10,21 @@ class Layer:
             in_features (int): Number of input features.
             out_features (int): Number of output features.
         """
-        self.weight = Tensor(np.random.randn(in_features, out_features) * np.sqrt(2.0 / in_features))
-        self.bias = Tensor(np.zeros((1, out_features)))
+        self.weight = Matrix(np.random.randn(in_features, out_features) * np.sqrt(2.0 / in_features))
+        self.bias = Matrix(np.zeros((out_features)))
     
     def __call__(self, x):
         """
         Perform the forward pass for the layer.
 
         Args:
-            x (Tensor): Input tensor.
+            x (Matrix): Input Matrix.
         
         Returns:
-            Tensor: Output tensor after applying weights and bias.
+            Matrix: Output Matrix after applying weights and bias.
         """
-        if not isinstance(x, Tensor):
-            x = Tensor(x)
+        if not isinstance(x, Matrix):
+            x = Matrix(x)
         return x.matmul(self.weight) + self.bias
     
     def parameters(self):
@@ -32,7 +32,7 @@ class Layer:
         Return the parameters of the layer.
 
         Returns:
-            list: List containing the weight and bias tensors.
+            list: List containing the weight and bias Matrixs.
         """
         return [self.weight, self.bias]
 
@@ -56,13 +56,13 @@ class MLP:
         Perform the forward pass for the MLP.
 
         Args:
-            x (Tensor): Input tensor.
+            x (Matrix): Input Matrix.
         
         Returns:
-            Tensor: Output tensor after passing through all layers.
+            Matrix: Output Matrix after passing through all layers.
         """
-        if not isinstance(x, Tensor):
-            x = Tensor(x)
+        if not isinstance(x, Matrix):
+            x = Matrix(x)
         out = x
         for i, layer in enumerate(self.layers):
             out = layer(out)
@@ -75,7 +75,7 @@ class MLP:
         Return the parameters of all layers in the MLP.
 
         Returns:
-            list: List of tensors containing all weights and biases.
+            list: List of Matrixs containing all weights and biases.
         """
         params = []
         for layer in self.layers:
