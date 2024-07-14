@@ -1,3 +1,4 @@
+[![Downloads](https://static.pepy.tech/badge/petitgrad)](https://pepy.tech/project/petitgrad)
 # petitgrad: A Matrix-based Autograd Engine
 
 ![status](https://img.shields.io/badge/is_it_ready-it_works-green)
